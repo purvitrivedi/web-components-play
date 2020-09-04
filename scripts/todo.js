@@ -69,7 +69,9 @@ class Todo extends HTMLElement {
     this.count = localStorage.getItem('count')
     const task = JSON.parse(localStorage.getItem('task'))
 
-    this.tasksObject = task
+    if (task) {
+      this.tasksObject = task
+    }
 
     for (const key in task) {
       this._appendTask(task[key])
@@ -93,20 +95,20 @@ class Todo extends HTMLElement {
 
     this._appendTask(submittedTask.value)
 
-  
-
     this.count = Number(this.count) + 1
     this.tasksObject[this.count] = submittedTask.value
-    submittedTask.value = ''
 
     localStorage.setItem('task', JSON.stringify(this.tasksObject))
     localStorage.setItem('count', this.count)
 
-    
+    submittedTask.value = ''
+
+
   }
 
 
   _appendTask(task) {
+
     const taskWrapper = document.createElement('div')
     const newTask = document.createElement('li')
     const checkbox = document.createElement('input')
