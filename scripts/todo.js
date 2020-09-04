@@ -66,27 +66,13 @@ class Todo extends HTMLElement {
 
 
   _getTasksfromstorage() {
+    this.count = localStorage.getItem('count')
     const task = JSON.parse(localStorage.getItem('task'))
 
+    this.tasksObject = task
+
     for (const key in task) {
-
-      console.log(task[key])
-      const taskWrapper = document.createElement('div')
-      const newTask = document.createElement('li')
-      const checkbox = document.createElement('input')
-      const potato = document.createElement('img')
-
-      newTask.textContent = task[key]
-      checkbox.setAttribute('type', 'checkbox')
-      checkbox.addEventListener('click', () => this._delete(newTask))
-      potato.setAttribute('src', 'styles/images/p-ninja.png')
-
-      this.allTasks.appendChild(taskWrapper)
-      taskWrapper.classList.add('task-wrapper')
-      taskWrapper.appendChild(potato)
-      taskWrapper.appendChild(newTask)
-      taskWrapper.appendChild(checkbox)
-
+      this._appendTask(task[key])
     }
 
   }
@@ -101,16 +87,32 @@ class Todo extends HTMLElement {
   }
 
 
-
   _addTask(event) {
     event.preventDefault()
     const submittedTask = this.formInput
+
+    this._appendTask(submittedTask.value)
+
+  
+
+    this.count = Number(this.count) + 1
+    this.tasksObject[this.count] = submittedTask.value
+    submittedTask.value = ''
+
+    localStorage.setItem('task', JSON.stringify(this.tasksObject))
+    localStorage.setItem('count', this.count)
+
+    
+  }
+
+
+  _appendTask(task) {
     const taskWrapper = document.createElement('div')
     const newTask = document.createElement('li')
     const checkbox = document.createElement('input')
     const potato = document.createElement('img')
 
-    newTask.textContent = submittedTask.value
+    newTask.textContent = task
     checkbox.setAttribute('type', 'checkbox')
     checkbox.addEventListener('click', () => this._delete(newTask))
     potato.setAttribute('src', 'styles/images/p-ninja.png')
@@ -120,13 +122,6 @@ class Todo extends HTMLElement {
     taskWrapper.appendChild(potato)
     taskWrapper.appendChild(newTask)
     taskWrapper.appendChild(checkbox)
-
-    submittedTask.value = ''
-
-    this.count = this.count + 1
-    this.tasksObject[this.count] = newTask.textContent
-
-    localStorage.setItem('task', JSON.stringify(this.tasksObject))
 
     this._closeModal()
   }

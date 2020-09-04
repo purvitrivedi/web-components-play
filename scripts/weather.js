@@ -34,7 +34,9 @@ class Weather extends HTMLElement {
 
 
     for (const key in this.weatherResults) {
+
       if (key === 'pressure') continue
+      
       const keyEdit = key.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
       const result = document.createElement('p')
       result.innerHTML = `${keyEdit}: <span>${Math.round(this.weatherResults[key])}</span>`
