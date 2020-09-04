@@ -1,6 +1,7 @@
 class Weather extends HTMLElement {
   constructor() {
     super()
+    this.apiKey = '18f628907291cfa7d3302a566f4ace8b'
     this.weatherResults = {}
     this.attachShadow({ mode: 'open' })
     this.shadowRoot.innerHTML = `
@@ -16,7 +17,7 @@ class Weather extends HTMLElement {
   }
 
   async _fetchWeather() {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=18f628907291cfa7d3302a566f4ace8b')
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${this.apiKey}`)
     const json = await response.json()
     this.weatherResults = json.main
 
