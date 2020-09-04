@@ -83,7 +83,7 @@ class Todo extends HTMLElement {
     newTask.textContent = submittedTask.value
     checkbox.setAttribute('type', 'checkbox')
     checkbox.addEventListener('click', () => this._delete(newTask))
-    potato.setAttribute('src', 'styles/p-ninja.png')
+    potato.setAttribute('src', 'styles/images/p-ninja.png')
 
     this.allTasks.appendChild(taskWrapper)
     taskWrapper.classList.add('task-wrapper')

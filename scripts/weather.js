@@ -27,9 +27,9 @@ class Weather extends HTMLElement {
 
     const image = document.createElement('img')
     if (this.weatherResults.temp > 18) {
-      image.setAttribute('src', 'styles/sun.png')
+      image.setAttribute('src', 'styles/images/sun.png')
     } else {
-      image.setAttribute('src', 'styles/cloudy.png')
+      image.setAttribute('src', 'styles/images/cloudy.png')
     }
 
     weatherWrapper.appendChild(image)

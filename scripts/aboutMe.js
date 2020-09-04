@@ -16,8 +16,8 @@ div {
     </style>
   
     <div>
-    <a href="https://github.com/purvitrivedi" target="_blank"><img src="styles/github.png" alt='github link'></a>
-    <a href="https://purvitrivedi.com/" target="_blank"><img src="styles/website.png" alt='website link'></a>
+    <a href="https://github.com/purvitrivedi" target="_blank"><img src="styles/images/github.png" alt='github link'></a>
+    <a href="https://purvitrivedi.com/" target="_blank"><img src="styles/images/website.png" alt='website link'></a>
     </div>
     <slot></slot>
 `
