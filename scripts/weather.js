@@ -19,10 +19,7 @@ class Weather extends HTMLElement {
   async _fetchWeather() {
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${this.apiKey}`)
     const json = await response.json()
-    this.weatherResults = json.main
-
-    console.log(json)
-    
+    this.weatherResults = json.main    
     const weatherWrapper = this.shadowRoot.querySelector('.weather-wrap')
 
     const image = document.createElement('img')
