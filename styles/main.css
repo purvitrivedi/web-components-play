@@ -35,6 +35,7 @@ pt-todo h1 {
 }
 
 pt-weather-app {
+  height: 75vh;
   width: 50%;
   text-align: center;
   color: rgb(211, 250, 245);
@@ -62,5 +63,26 @@ pt-about-me h1 {
 .top {
   display: flex;
   justify-content: space-around;
+}
+
+
+@media (max-width: 800px) {
+
+  .top {
+    flex-direction: column;
+  }
+
+  pt-weather-app, pt-todo, pt-about-me {
+    height: 70vh;
+    width: 100vw;
+  }
+
+  pt-about-me {
+    height: 20vh;
+  }
+
+  body {
+    margin: 0rem;
+  }
 
 }

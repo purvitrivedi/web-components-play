@@ -10,7 +10,7 @@ div {
 }
 
     img {
-      width: 3%;
+      width: 2rem;
       margin:10px;
     }
     </style>

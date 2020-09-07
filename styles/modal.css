@@ -8,7 +8,7 @@
 
 .task-list {
   height: 60%;
-  width: 50%;
+  width: 65%;
   margin-top: 25px;
   border-radius: 2rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -28,7 +28,7 @@
 }
 
 img {
-  width: 5%;
+  width: 1rem;
 }
 
 li {
@@ -73,17 +73,25 @@ header {
 }
 
 form {
+  width: 100%;
   height: 5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-evenly;
 }
 
 #form-input {
-  width: 40em;
+  width: 70%;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
+}
+
+@media (max-width: 1150px) {
+  #form-input {
+    width: 90%;
+  }
 }
 
 .buttons {
@@ -102,4 +110,20 @@ form {
 .hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+@media (max-width: 400px) {
+  .task-list {
+    font-size: 0.95rem;
+    width: 80%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  #modal {
+    left: 5%;
+    width:90%;
+
+  }
 }

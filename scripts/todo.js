@@ -39,14 +39,16 @@ class Todo extends HTMLElement {
     this.modal = this.shadowRoot.querySelector('#modal')
     this.cancelBtn = this.shadowRoot.querySelector('#cancel-btn')
 
-    this.form.addEventListener('submit', this._addTask.bind(this))
-    this.backdrop.addEventListener('click', this._closeModal.bind(this))
-    this.cancelBtn.addEventListener('click', this._closeModal.bind(this))
   }
 
 
   connectedCallback() {
     this._getTasksfromstorage()
+
+
+    this.form.addEventListener('submit', this._addTask.bind(this))
+    this.backdrop.addEventListener('click', this._closeModal.bind(this))
+    this.cancelBtn.addEventListener('click', this._closeModal.bind(this))
 
     if (this.hasAttribute('text')) {
       this.text = this.getAttribute('text')
@@ -62,6 +64,12 @@ class Todo extends HTMLElement {
 
     this.modalButton.addEventListener('click', this._openModal.bind(this))
 
+  }
+
+  disconnectedCallback() {
+    this.form.removeEventListener('submit', this._addTask.bind(this))
+    this.backdrop.removeEventListener('click', this._closeModal.bind(this))
+    this.cancelBtn.removeEventListener('click', this._closeModal.bind(this))
   }
 
 
