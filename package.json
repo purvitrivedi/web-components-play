@@ -2,17 +2,20 @@
   "name": "web-components-play",
   "version": "1.0.0",
   "description": "* To do List * Weather API App * About me",
-  "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "vite": "^6.3.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }

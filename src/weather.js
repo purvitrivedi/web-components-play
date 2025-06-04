@@ -1,12 +1,13 @@
+const apiKey = import.meta.env.VITE_API_KEY;
+
 class Weather extends HTMLElement {
   constructor() {
     super();
-    this.apiKey = '123';
     this.weatherResults = {};
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.innerHTML = `
     <slot></slot>
-    <link rel="stylesheet" href="styles/weather.css">
+    <link rel="stylesheet" href="/styles/weather.css">
     <div class="weather-wrap">
     </div>
 `;
@@ -18,8 +19,8 @@ class Weather extends HTMLElement {
 
   async _fetchWeather() {
     try {
-      const response = await fetch('/api/weather?city=London');
-      const json = await response.json();
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=${apiKey}`);
+      const json = await res.json();
 
       if (json.error) {
         throw new Error(json.error);
@@ -32,7 +33,7 @@ class Weather extends HTMLElement {
       if (this.weatherResults.temp > 18) {
         image.setAttribute('src', 'styles/images/sun.png');
       } else {
-        image.setAttribute('src', 'styles/images/cloudy.png');
+        image.setAttribute('src', '/styles/images/cloudy.png');
       }
 
       weatherWrapper.appendChild(image);

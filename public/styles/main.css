@@ -26,7 +26,7 @@ pt-todo {
   flex-direction: column;
   align-items: center;
   width: 50%;
-  background-color:rgb(228, 204, 126);
+  background-color: rgb(228, 204, 126);
   color: #58A4B0;
 }
 
@@ -84,5 +84,4 @@ pt-about-me h1 {
   body {
     margin: 0rem;
   }
-
 }
