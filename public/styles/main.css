@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 2rem;
+  font-family: sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  color: #c3a;
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+pt-todo {
+  display: flex;
+  height: 75vh;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  background-color:rgb(228, 204, 126);
+  color: #58A4B0;
+}
+
+pt-todo h1 {
+  color: #58A4B0;
+}
+
+pt-weather-app {
+  height: 75vh;
+  width: 50%;
+  text-align: center;
+  color: rgb(211, 250, 245);
+}
+
+pt-weather-app h1 {
+  color: rgb(228, 204, 126);
+}
+
+pt-about-me {
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* background-color:#fde ; */
+  background-color: rgb(211, 250, 245);
+  color: rgba(0, 0, 0, 0.705);
+}
+
+pt-about-me h1 {
+  font-size: 15px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+@media (max-width: 800px) {
+
+  .top {
+    flex-direction: column;
+  }
+
+  pt-weather-app, pt-todo, pt-about-me {
+    height: 70vh;
+    width: 100vw;
+  }
+
+  pt-about-me {
+    height: 20vh;
+  }
+
+  body {
+    margin: 0rem;
+  }
+
+}

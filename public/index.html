@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="styles/images/favicon.ico" />
+		<title>Random Web Components</title>
+		<script src="scripts/todo.js"></script>
+		<script src="scripts/weather.js"></script>
+		<script src="scripts/aboutMe.js"></script>
+		<link rel="stylesheet" href="styles/main.css" />
+	</head>
+	<body>
+		<main>
+			<section class="top">
+				<pt-todo text="Add a task" placeholder-text="Mash potatoes for fun">
+					<h1>Today's Tasks</h1>
+				</pt-todo>
+				<pt-weather-app>
+					<h1>Today's Weather</h1>
+				</pt-weather-app>
+			</section>
+			<pt-about-me>
+				<h1>Made by: Purvi Trivedi</h1>
+			</pt-about-me>
+		</main>
+	</body>
+</html>

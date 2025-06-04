@@ -1,0 +1,19 @@
+:host {
+  background: #58A4B0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+
+.weather-wrap {
+height: 60%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+img {
+  width: 20%;
+}

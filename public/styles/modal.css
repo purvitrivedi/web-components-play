@@ -1,0 +1,129 @@
+#add-task-wrapper button {
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.task-list {
+  height: 60%;
+  width: 65%;
+  margin-top: 25px;
+  border-radius: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  text-align: center;
+  overflow: scroll;
+}
+
+.task-list p {
+  font-weight: bold;
+}
+
+.task-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  width: 1rem;
+}
+
+li {
+  margin: 0 10px;
+}
+
+.strike-through {
+  text-decoration: line-through;
+  color: rgb(69, 98, 100);
+}
+
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10;
+}
+
+#modal {
+  position: fixed;
+  top: 10vh;
+  left: 25%;
+  width: 50%;
+  z-index: 100;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-out;
+  height: 15rem;
+}
+
+header {
+  text-align: center;
+  font-size: 10px;
+}
+
+form {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#form-input {
+  width: 70%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+@media (max-width: 1150px) {
+  #form-input {
+    width: 90%;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button, .buttons input {
+  margin: 5px;
+  border: none;
+  background-color: #bec;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 400px) {
+  .task-list {
+    font-size: 0.95rem;
+    width: 80%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 800px) {
+  #modal {
+    left: 5%;
+    width:90%;
+
+  }
+}
